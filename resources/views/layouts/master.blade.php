@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Підключаємо загальні стилі по всьому додатку -->
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Підключаємо об*єднаний файл із стилями через хелпер -->
     <link rel="stylesheet" type="text/css" href="{{ elixir('styles/base_styles.css') }}">
 
 </head>
