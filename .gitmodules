@@ -1,0 +1,3 @@
+[submodule "web.com"]
+	path = web.com
+	url = git@github.com:StanislavRybonka/web.com.git
