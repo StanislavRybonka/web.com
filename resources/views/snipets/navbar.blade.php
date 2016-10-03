@@ -23,10 +23,10 @@
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @if (Auth::check())
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="/logout">Logout</a></li>
                         @else
-                            <li><a href="#">Register</a></li>
-                            <li><a href="#">Login</a></li>
+                            <li><a href="/register">Register</a></li>
+                            <li><a href="/login">Login</a></li>
                         @endif
                     </ul>
                 </li>

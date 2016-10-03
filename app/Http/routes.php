@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.master');
-});
+Route::get('/', 'SiteController@index');
+
+
+Route::auth();
+Route::get('cabinet', ['middleware' => 'auth', function() {
+
+}]);
+
+Route::get('/home', 'HomeController@index');
