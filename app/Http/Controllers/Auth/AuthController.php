@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+
 
 class AuthController extends Controller
 {
@@ -16,9 +18,9 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    /** После аутентефикаци с помощью трейтов используя поле users->role
-     * юзеры редиректятся, в кабинет или в админку
-     **/
+
+    protected $redirectPath = "/cabinet";
+
 
     /**
      * Create a new authentication controller instance.
@@ -28,6 +30,7 @@ class AuthController extends Controller
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
+
 
     /**
      * Get a validator for an incoming registration request.
