@@ -10,43 +10,30 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Registration & Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
-    |
-    */
+    /**
+     * При регистрации и логине, используются трейты, там вся логика
+     **/
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    /**
-     * Where to redirect users after login / registration.
-     *
-     * @var string
-     */
-//    protected $redirectTo = '/home';
+    /** После аутентефикаци с помощью трейтов используя поле users->role
+     * юзеры редиректятся, в кабинет или в админку
+     **/
 
     /**
      * Create a new authentication controller instance.
-     *
      * @return void
-     */
+     **/
     public function __construct()
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
-
     }
 
     /**
      * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
-     */
+     **/
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -54,14 +41,14 @@ class AuthController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
+
     }
 
     /**
      * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
+     * @param  array $data
      * @return User
-     */
+     **/
     protected function create(array $data)
     {
         return User::create([
