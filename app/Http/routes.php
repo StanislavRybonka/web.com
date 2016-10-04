@@ -28,8 +28,8 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 /*------ Route group for authenticated users------*/
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/cabinet', 'CabinetController@index');
+Route::group(['middleware' => 'auth','prefix' => 'cabinet'], function () {
+    Route::get('/cabinet', 'CabinetController@index')->name('cabinet.index');
     Route::get('logout', 'Auth\AuthController@logout');
 });
 
