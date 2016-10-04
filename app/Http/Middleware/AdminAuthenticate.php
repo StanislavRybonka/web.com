@@ -27,9 +27,9 @@ class AdminAuthenticate
                 return redirect()->guest('login');
             }
         }
-//        if (!$auth->user()->name=="Stas") {
-//            return response('Access denied.', 401);
-//        }
+        if (!$auth->user()->role) {
+            return response('Access denied.', 401);
+        }
 
         return $next($request);
     }
