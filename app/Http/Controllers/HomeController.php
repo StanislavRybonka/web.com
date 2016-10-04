@@ -26,11 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->name == "Stas"){
-            return view('admin.index');
-        }else{
-            return view('cabinet.index');
-        }
+
+
+            return view('home');
+
 
     }
 }

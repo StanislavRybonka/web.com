@@ -13,10 +13,17 @@
 
 Route::get('/', 'SiteController@index');
 
-
 Route::auth();
-Route::get('cabinet', ['middleware' => 'auth', function() {
 
-}]);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', 'HomeController@index');
+    Route::get('/cabinet', 'CabinetController@index');
+});
 
-Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
+
+
+});
+
+
+Route::get('/admin', 'Admin\AdminController@index')->name('admin');
