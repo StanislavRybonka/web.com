@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.css"],"names":[],"mappings":"AAAA,KACA,sBAAA,CACA","file":"base_styles.css","sourcesContent":["body{\n    background-color:brown;\n}"],"sourceRoot":"/source/"}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"base_styles.css","sourcesContent":[],"sourceRoot":"/source/"}
