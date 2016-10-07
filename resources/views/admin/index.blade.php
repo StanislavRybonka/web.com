@@ -8,7 +8,10 @@
                 <div class="panel-heading">Admin Dashboard</div>
 
                 <div class="panel-body">
-                   Admin cabinet
+                    <h3 class="text-center">Админка!</h3>
+                    <a href="{{ route('admin.users.index') }}">
+                        <i class="glyphicon glyphicon-home"></i> Пользователи
+                    </a>
                 </div>
             </div>
         </div>

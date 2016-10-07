@@ -11,11 +11,10 @@
 |
 */
 /*------ Route common ------*/
-Route::get('/', 'SiteController@index');
+Route::get('/', 'SiteController@index')->name('index');;
 
 /*------ Route group for guests ------*/
 Route::group(['middleware' => 'guest'], function () {
-
     Route::get('login', 'Auth\AuthController@showLoginForm');
     Route::post('login', 'Auth\AuthController@login');
     Route::get('register', 'Auth\AuthController@showRegistrationForm');
@@ -23,19 +22,19 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
     Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
     Route::post('password/reset', 'Auth\PasswordController@reset');
-
-
 });
+
 
 /*------ Route group for authenticated users------*/
 Route::group(['middleware' => 'auth', 'prefix' => 'cabinet'], function () {
-    Route::get('/cabinet', 'CabinetController@index')->name('cabinet.index');
-    Route::get('logout', 'Auth\AuthController@logout');
+    Route::get('index', 'Account\CabinetController@index')->name('cabinet.index');
+    Route::get('profile', 'Account\ProfileController@index')->name('profile.index');
+    Route::get('logout', 'Auth\AuthController@logout')->name('logout');
 });
 
-
+/*------ Route group for authenticated admin------*/
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::get('/admin', 'AdminController@index')->name('admin.index');
-
+    Route::get('index', 'AdminController@index')->name('admin.index');
+    Route::get('/users', 'UsersController@index')->name('admin.users.index');
 });
 

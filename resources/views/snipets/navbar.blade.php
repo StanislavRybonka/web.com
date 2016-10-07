@@ -23,7 +23,10 @@
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @if (Auth::check())
-                            <li><a href="/logout">Logout</a></li>
+                            <li><a href="{{ route('logout') }}">Logout</a></li>
+                            @if(Auth::user()->role)
+                                <li><a href="{{ route('cabinet.index') }}">Перейти на сайт</a></li>
+                                @endif
                         @else
                             <li><a href="/register">Register</a></li>
                             <li><a href="/login">Login</a></li>

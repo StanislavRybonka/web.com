@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Account;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminController extends Controller
+class ProfileController extends Controller
 {
     public function index()
     {
-        return view('admin/index');
+        return view('cabinet/profile/index');
     }
 }

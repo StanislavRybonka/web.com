@@ -13,6 +13,9 @@
                                 <i class="glyphicon glyphicon-home"></i> Admin
                             </a>
                         @endif
+                            <a href="{{ route('profile.index') }}">
+                                <i class="glyphicon glyphicon-home"></i> Profile
+                            </a>
                     </div>
                 </div>
             </div>
