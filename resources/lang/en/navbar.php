@@ -5,11 +5,11 @@ return [
     /* Snipets navbar views, using at app app */
 
     'common'=>[
-        'name' => 'Stanislav Rybonka'
+        'name' => 'Portfolio'
     ],
     'menu'=>[
-        'about'=>'About me',
-        'purpose'=>'My purpose',
-        'achievement'=>'Achievement',
+        'about'=>'Home',
+        'purpose'=>'About us',
+        'achievement'=>'Contact',
     ]
 ];
