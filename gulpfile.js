@@ -17,7 +17,7 @@ elixir(function(mix) {
      що при мінізації не додається розширення min до файлу.
     * */
     mix.styles([
-        '/css/main.css'
+        'css/main.css'
     ], 'public/styles/base_styles.css', 'public');
 
 
@@ -26,3 +26,20 @@ elixir(function(mix) {
     * Папка build,створюється автоматично, після додавання функції.*/
     mix.version('public/styles/base_styles.css');
 });
+elixir(function(mix) {
+
+    /*gulp --production - мінімізує файли на сервері, врахувати,
+     що при мінізації не додається розширення min до файлу.
+     * */
+    mix.styles([
+        'styles/cabinet/profile.css'
+    ], 'public/styles/cabinet/base_cabinet.css', 'public');
+
+
+    /* Функція забезпечує версіонування, після внесення змін автоматично буде змінюватись
+     * хеш в файлі, який ми підключаємо в мастер шаблоні, після змін запустити команду gulp, в терміналі.
+     * Папка build,створюється автоматично, після додавання функції.*/
+
+});
+
+
