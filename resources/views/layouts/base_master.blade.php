@@ -7,9 +7,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Підключаємо загальні стилі по всьому додатку -->
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!-- Підключаємо об*єднаний файл із стилями через хелпер -->
-    <link rel="stylesheet" type="text/css" href="{{ elixir('styles/base_styles.css') }}">
+    @section('styles')
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Підключаємо об*єднаний файл із стилями через хелпер -->
+        <link rel="stylesheet" type="text/css" href="{{ elixir('styles/base_styles.css') }}">
+    @show
 
 </head>
 <body>
@@ -22,7 +24,9 @@
 <!-- Передбачуємо можливість використання індивідуальних скриптів на дочірніх сторніках, футер-->
 @yield('footer')
 <!-- Підключаємо загальні скрипти по всьому додатку -->
-<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+@section('scripts')
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+@show
 </body>
 </html>
